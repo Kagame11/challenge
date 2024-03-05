@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+function Drink ({name}) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <section>
+      <h1>{name}</h1>
+      <dl>
+        <dt>part of plant</dt>
+        <dd>{name === 'tea' ?'leaf': 'bean'}</dd>
+        <dt>Caffeine content</dt>
+        <dd>{name === 'tea' ? '15-7- mg/cup' : '80-185 mg/cup'}</dd>
+        <dt>Age</dt>
+        <dd>{name === 'tea' ? '4000+ years' : '1000+ years'}</dd>
+      </dl>
+    </section>
+  )
+}
+
+export default function DrinkList() {
+  return (
+    <div>
+      <Drink name="tea" />
+      <Drink name="coffee" />
     </div>
   );
 }
-
-export default App;
